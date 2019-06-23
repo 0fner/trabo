@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Exchange - Trabo documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-get_avg_buy_price">#get_avg_buy_price</a>
+    
+    <li ><a href="#method-i-get_avg_sell_price">#get_avg_sell_price</a>
+    
+    <li ><a href="#method-i-get_buy_price">#get_buy_price</a>
+    
+    <li ><a href="#method-i-get_buy_price_history">#get_buy_price_history</a>
+    
+    <li ><a href="#method-i-get_buy_price_priv">#get_buy_price_priv</a>
+    
+    <li ><a href="#method-i-get_sell_price">#get_sell_price</a>
+    
+    <li ><a href="#method-i-get_sell_price_history">#get_sell_price_history</a>
+    
+    <li ><a href="#method-i-get_sell_price_priv">#get_sell_price_priv</a>
+    
+    <li ><a href="#method-i-get_slope_buy_price">#get_slope_buy_price</a>
+    
+    <li ><a href="#method-i-get_slope_sell_price">#get_slope_sell_price</a>
+    
+    <li ><a href="#method-i-reset">#reset</a>
+    
+    <li ><a href="#method-i-start">#start</a>
+    
+    <li ><a href="#method-i-stop">#stop</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Exchange">
+  <h1 id="class-Exchange" class="class">
+    class Exchange
+  </h1>
+
+  <section class="description">
+    
+<p>This class is the parent class for all exchange classes.  To support a particular exchange, one needs to derive from this class and implement the following methods (see <a href="ExchangeSimulation.html"><code>ExchangeSimulation</code></a> for an example):</p>
+<ul><li>
+<p>get_balance</p>
+</li><li>
+<p>place_market_order(type, volume, fee_in_base_currency)</p>
+</li><li>
+<p>place_limit_order(type, volume, limit, fee_in_base_currency)</p>
+</li><li>
+<p>cancel_order(order_id)</p>
+</li><li>
+<p>get_order_status(order_id)</p>
+</li></ul>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-initial_balance_base_currency" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">initial_balance_base_currency</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-initial_balance_quote_currency" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">initial_balance_quote_currency</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(timer, base_currency, quote_currency)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialize exchange (usually called by a child class).</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>timer</code>
+<dd>
+<p><a href="Timer.html"><code>Timer</code></a> instance</p>
+</dd><dt><code>base_currency</code>
+<dd>
+<p>base currency string (e.g. “<code>XBT</code>”)</p>
+</dd><dt><code>quote_currency</code>
+<dd>
+<p>quote currency string (e.g. “<code>USD</code>”)</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">timer</span>, <span class="ruby-identifier">base_currency</span>, <span class="ruby-identifier">quote_currency</span>)
+  <span class="ruby-ivar">@timer</span> = <span class="ruby-identifier">timer</span>
+  
+  <span class="ruby-ivar">@pair_name</span> = <span class="ruby-node">&quot;#{base_currency}#{quote_currency}&quot;</span>
+  <span class="ruby-ivar">@pair_method</span> = <span class="ruby-node">&quot;X#{base_currency}Z#{quote_currency}&quot;</span>
+  
+  <span class="ruby-ivar">@quote_currency</span> = <span class="ruby-node">&quot;Z#{quote_currency}&quot;</span>
+  <span class="ruby-ivar">@base_currency</span> = <span class="ruby-node">&quot;X#{base_currency}&quot;</span>
+  
+  <span class="ruby-ivar">@database_mutex</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@TimePoint</span> = <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;TimePoint&quot;</span>, <span class="ruby-value">:time</span>, <span class="ruby-value">:value</span>)
+  <span class="ruby-ivar">@bids</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@asks</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  
+  <span class="ruby-ivar">@OrderStatus</span> = <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:status</span>, <span class="ruby-value">:vol</span>, <span class="ruby-value">:vol_exec</span>, <span class="ruby-value">:fee</span>, <span class="ruby-value">:price</span>, <span class="ruby-value">:type</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-get_avg_buy_price" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_avg_buy_price</span><span
+            class="method-args">(vol, start_time, end_time)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the median of the buy price for the requested volume in a given time interval.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume in base currency</p>
+</dd><dt><code>start_time</code>
+<dd>
+<p>start of time interval given as number of seconds since the Epoch</p>
+</dd><dt><code>end_time</code>
+<dd>
+<p>end of time interval given as number of seconds since the Epoch</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>price</code>
+<dd>
+<p>median buy price in base currency</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_avg_buy_price-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_avg_buy_price</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">get_buy_price_history</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>[<span class="ruby-value">:price</span>].<span class="ruby-identifier">median</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_avg_sell_price" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_avg_sell_price</span><span
+            class="method-args">(vol, start_time, end_time)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the median of the sell price for the requested volume in a given time interval.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume in base currency</p>
+</dd><dt><code>start_time</code>
+<dd>
+<p>start of time interval given as number of seconds since the Epoch</p>
+</dd><dt><code>end_time</code>
+<dd>
+<p>end of time interval given as number of seconds since the Epoch</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>price</code>
+<dd>
+<p>median sell price in base currency</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_avg_sell_price-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_avg_sell_price</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">get_sell_price_history</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">data</span>[<span class="ruby-value">:price</span>].<span class="ruby-identifier">median</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_buy_price" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_buy_price</span><span
+            class="method-args">(vol)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current buy price for the requested volume.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume in base currency</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>price</code>
+<dd>
+<p>buy price in base currency</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_buy_price-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_buy_price</span>(<span class="ruby-identifier">vol</span>)
+  <span class="ruby-identifier">current_asks</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@database_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;database is empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">empty?</span>
+    
+    <span class="ruby-identifier">current_time</span> = <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">get_time</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">bsearch_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">current_time</span>}
+    <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">idx</span>
+    
+    <span class="ruby-identifier">current_asks</span> = <span class="ruby-ivar">@asks</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># let&#39;s assume db_price is ascending</span>
+  
+  <span class="ruby-identifier">get_buy_price_priv</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">current_asks</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_buy_price_history" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_buy_price_history</span><span
+            class="method-args">(vol, start_time, end_time)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the history of buy prices for the requested volume in a given time interval.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume</p>
+</dd><dt><code>start_time</code>
+<dd>
+<p>start of time interval given as number of seconds since the Epoch</p>
+</dd><dt><code>end_time</code>
+<dd>
+<p>end of time interval given as number of seconds since the Epoch</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>prices</code>
+<dd>
+<p>array of buy prices in base currency</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_buy_price_history-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_buy_price_history</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-identifier">asks_data_points</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@database_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;database is empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">start_idx</span> = <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">bsearch_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">start_time</span>}
+    <span class="ruby-identifier">end_idx</span> = <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">bsearch_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">end_time</span>}
+    <span class="ruby-identifier">start_idx</span> = <span class="ruby-identifier">start_idx</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">start_idx</span>
+    <span class="ruby-identifier">end_idx</span> = <span class="ruby-identifier">end_idx</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">end_idx</span>
+
+    <span class="ruby-identifier">asks_data_points</span> = <span class="ruby-ivar">@asks</span>[<span class="ruby-identifier">start_idx</span><span class="ruby-operator">..</span><span class="ruby-identifier">end_idx</span>]
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">prices</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">times</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">asks_data_point</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">asks_data_points</span>
+    <span class="ruby-identifier">current_asks</span> = <span class="ruby-identifier">asks_data_point</span>.<span class="ruby-identifier">value</span>      
+    <span class="ruby-identifier">buy_price</span> = <span class="ruby-identifier">get_buy_price_priv</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">current_asks</span>)
+    
+    <span class="ruby-identifier">prices</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">buy_price</span>
+    <span class="ruby-identifier">times</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">asks_data_point</span>.<span class="ruby-identifier">time</span>
+  <span class="ruby-keyword">end</span>    
+  <span class="ruby-identifier">buy_data</span> = <span class="ruby-constant">Daru</span><span class="ruby-operator">::</span><span class="ruby-constant">DataFrame</span>.<span class="ruby-identifier">new</span>({<span class="ruby-value">:time</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">times</span>, <span class="ruby-value">:price</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">prices</span>}, {<span class="ruby-value">:order</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-value">:time</span>, <span class="ruby-value">:price</span>]})
+
+  <span class="ruby-comment"># subtract time offset</span>
+  <span class="ruby-identifier">buy_data</span>[<span class="ruby-value">:time</span>] <span class="ruby-operator">-=</span> <span class="ruby-identifier">buy_data</span>[<span class="ruby-value">:time</span>][<span class="ruby-value">0</span>]
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">buy_data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_sell_price" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_sell_price</span><span
+            class="method-args">(vol)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current sell price for the requested volume.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume in base currency</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>price</code>
+<dd>
+<p>sell price in base currency</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_sell_price-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_sell_price</span>(<span class="ruby-identifier">vol</span>)
+  <span class="ruby-identifier">current_bids</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@database_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;database is empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">empty?</span>
+    
+    <span class="ruby-identifier">current_time</span> = <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">get_time</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">bsearch_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">current_time</span>}
+    <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">idx</span>
+    
+    <span class="ruby-identifier">current_bids</span> = <span class="ruby-ivar">@bids</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># let&#39;s assume db_price is ascending</span>
+  
+  <span class="ruby-identifier">get_sell_price_priv</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">current_bids</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_sell_price_history" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_sell_price_history</span><span
+            class="method-args">(vol, start_time, end_time)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the history of sell prices for the requested volume in a given time interval.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume</p>
+</dd><dt><code>start_time</code>
+<dd>
+<p>start of time interval given as number of seconds since the Epoch</p>
+</dd><dt><code>end_time</code>
+<dd>
+<p>end of time interval given as number of seconds since the Epoch</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>prices</code>
+<dd>
+<p>array of sell prices in base currency</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_sell_price_history-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_sell_price_history</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-identifier">bids_data_points</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@database_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;database is empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">start_idx</span> = <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">bsearch_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">start_time</span>}
+    <span class="ruby-identifier">end_idx</span> = <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">bsearch_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">end_time</span>}
+    <span class="ruby-identifier">start_idx</span> = <span class="ruby-identifier">start_idx</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">start_idx</span>
+    <span class="ruby-identifier">end_idx</span> = <span class="ruby-identifier">end_idx</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">end_idx</span>
+    
+    <span class="ruby-identifier">bids_data_points</span> = <span class="ruby-ivar">@bids</span>[<span class="ruby-identifier">start_idx</span><span class="ruby-operator">..</span><span class="ruby-identifier">end_idx</span>]
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">prices</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">times</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">bids_data_point</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">bids_data_points</span>
+    <span class="ruby-identifier">current_bids</span> = <span class="ruby-identifier">bids_data_point</span>.<span class="ruby-identifier">value</span>      
+    <span class="ruby-identifier">sell_price</span> = <span class="ruby-identifier">get_sell_price_priv</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">current_bids</span>)
+    
+    <span class="ruby-identifier">prices</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sell_price</span>
+    <span class="ruby-identifier">times</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">bids_data_point</span>.<span class="ruby-identifier">time</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">sell_data</span> = <span class="ruby-constant">Daru</span><span class="ruby-operator">::</span><span class="ruby-constant">DataFrame</span>.<span class="ruby-identifier">new</span>({<span class="ruby-value">:time</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">times</span>, <span class="ruby-value">:price</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">prices</span>}, {<span class="ruby-value">:order</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-value">:time</span>, <span class="ruby-value">:price</span>]})
+  
+  <span class="ruby-comment"># subtract time offset</span>
+  <span class="ruby-identifier">sell_data</span>[<span class="ruby-value">:time</span>] <span class="ruby-operator">-=</span> <span class="ruby-identifier">sell_data</span>[<span class="ruby-value">:time</span>][<span class="ruby-value">0</span>]
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">sell_data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_slope_buy_price" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_slope_buy_price</span><span
+            class="method-args">(vol, start_time, end_time)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the slope of the buy price for the requested volume in a given time interval.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume in base currency</p>
+</dd><dt><code>start_time</code>
+<dd>
+<p>start of time interval given as number of seconds since the Epoch</p>
+</dd><dt><code>end_time</code>
+<dd>
+<p>end of time interval given as number of seconds since the Epoch</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>price</code>
+<dd>
+<p>slope of the buy price</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_slope_buy_price-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_slope_buy_price</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">get_buy_price_history</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  
+  <span class="ruby-identifier">reg</span> = <span class="ruby-constant">Statsample</span><span class="ruby-operator">::</span><span class="ruby-constant">Regression</span><span class="ruby-operator">::</span><span class="ruby-constant">Simple</span>.<span class="ruby-identifier">new_from_vectors</span>(<span class="ruby-identifier">data</span>[<span class="ruby-value">:time</span>], <span class="ruby-identifier">data</span>[<span class="ruby-value">:price</span>])
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">reg</span>.<span class="ruby-identifier">b</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_slope_sell_price" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_slope_sell_price</span><span
+            class="method-args">(vol, start_time, end_time)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the slope of the sell price for the requested volume in a given time interval.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume in base currency</p>
+</dd><dt><code>start_time</code>
+<dd>
+<p>start of time interval given as number of seconds since the Epoch</p>
+</dd><dt><code>end_time</code>
+<dd>
+<p>end of time interval given as number of seconds since the Epoch</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>price</code>
+<dd>
+<p>slope of the sell price</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_slope_sell_price-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_slope_sell_price</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">get_sell_price_history</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  
+  <span class="ruby-identifier">reg</span> = <span class="ruby-constant">Statsample</span><span class="ruby-operator">::</span><span class="ruby-constant">Regression</span><span class="ruby-operator">::</span><span class="ruby-constant">Simple</span>.<span class="ruby-identifier">new_from_vectors</span>(<span class="ruby-identifier">data</span>[<span class="ruby-value">:time</span>], <span class="ruby-identifier">data</span>[<span class="ruby-value">:price</span>])
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">reg</span>.<span class="ruby-identifier">b</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Resets the internal state of the exchange instance. This method is only required if the exchange is used for backtesting.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Starts the exchange. Use this method to start collecting price data.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="start-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start</span>    
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-stop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stop</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Shuts down the exchange.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="stop-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stop</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-get_buy_price_priv" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_buy_price_priv</span><span
+            class="method-args">(vol, asks)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the weighted buy price for the requested volume given the asks from an order book</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume</p>
+</dd><dt><code>asks</code>
+<dd>
+<p>array of asks from the order book, each ask is again a 2-element array where index 0 is the price and index 1 is the volume</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>price</code>
+<dd>
+<p>buy price in base currency</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_buy_price_priv-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_buy_price_priv</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">asks</span>)
+  <span class="ruby-identifier">rest_vol</span> = <span class="ruby-identifier">vol</span>
+  <span class="ruby-identifier">weighted_price</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">ask</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">asks</span>
+    <span class="ruby-identifier">db_price</span> = <span class="ruby-identifier">ask</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_f</span>
+    <span class="ruby-identifier">db_vol</span> = <span class="ruby-identifier">ask</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">rest_vol</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">db_vol</span>
+      <span class="ruby-identifier">weighted_price</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">db_vol</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">db_price</span>
+      <span class="ruby-identifier">rest_vol</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">db_vol</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">weighted_price</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">rest_vol</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">db_price</span>
+      <span class="ruby-identifier">rest_vol</span> = <span class="ruby-value">0.0</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;not enough volume available on market&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">rest_vol</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">weighted_price</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">vol</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_sell_price_priv" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_sell_price_priv</span><span
+            class="method-args">(vol, bids)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the weighted sell price for the requested volume given the bids from an order book</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>vol</code>
+<dd>
+<p>volume</p>
+</dd><dt><code>bids</code>
+<dd>
+<p>array of bids from the order book, each bid is again a 2-element array where index 0 is the price and index 1 is the volume</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>price</code>
+<dd>
+<p>sell price in base currency</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_sell_price_priv-source">
+            <pre><span class="ruby-comment"># File libs/Exchange.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_sell_price_priv</span>(<span class="ruby-identifier">vol</span>, <span class="ruby-identifier">bids</span>)
+  <span class="ruby-identifier">rest_vol</span> = <span class="ruby-identifier">vol</span>
+  <span class="ruby-identifier">weighted_price</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">bid</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">bids</span>
+    <span class="ruby-identifier">db_price</span> = <span class="ruby-identifier">bid</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_f</span>
+    <span class="ruby-identifier">db_vol</span> = <span class="ruby-identifier">bid</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">rest_vol</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">db_vol</span>
+      <span class="ruby-identifier">weighted_price</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">db_vol</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">db_price</span>
+      <span class="ruby-identifier">rest_vol</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">db_vol</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">weighted_price</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">rest_vol</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">db_price</span>
+      <span class="ruby-identifier">rest_vol</span> = <span class="ruby-value">0.0</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;not enough volume available on market&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">rest_vol</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">weighted_price</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">vol</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

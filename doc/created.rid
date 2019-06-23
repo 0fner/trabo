@@ -1,0 +1,9 @@
+Sun, 23 Jun 2019 18:44:08 +0200
+README.rdoc	Sun, 23 Jun 2019 18:30:53 +0200
+libs/Exchange.rb	Sun, 13 Jan 2019 19:48:10 +0100
+libs/ExchangeKraken.rb	Sun, 13 Jan 2019 19:49:05 +0100
+libs/ExchangeSimulation.rb	Sun, 13 Jan 2019 20:21:21 +0100
+libs/Kraken.rb	Sun, 13 Jan 2019 17:37:12 +0100
+libs/Timer.rb	Sun, 13 Jan 2019 18:26:13 +0100
+libs/TimerSimulation.rb	Sun, 13 Jan 2019 20:40:36 +0100
+strategies/StrategyScroogeMcDuck.rb	Sun, 23 Jun 2019 18:43:17 +0200

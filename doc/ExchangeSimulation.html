@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class ExchangeSimulation - Trabo documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Exchange.html">Exchange</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-cancel_order">#cancel_order</a>
+    
+    <li ><a href="#method-i-get_balance">#get_balance</a>
+    
+    <li ><a href="#method-i-get_order_status">#get_order_status</a>
+    
+    <li ><a href="#method-i-place_limit_order">#place_limit_order</a>
+    
+    <li ><a href="#method-i-place_market_order">#place_market_order</a>
+    
+    <li ><a href="#method-i-reset">#reset</a>
+    
+    <li ><a href="#method-i-show_data">#show_data</a>
+    
+    <li ><a href="#method-i-update_balance">#update_balance</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-ExchangeSimulation">
+  <h1 id="class-ExchangeSimulation" class="class">
+    class ExchangeSimulation
+  </h1>
+
+  <section class="description">
+    
+<p>This class simulates an exchange. Use it for backtesting.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-initial_balance_base_currency" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">initial_balance_base_currency</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-initial_balance_quote_currency" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">initial_balance_quote_currency</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(timer, base_currency, quote_currency, asks_data_file, bids_data_file)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes the exchange.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>timer</code>
+<dd>
+<p><a href="Timer.html"><code>Timer</code></a> instance</p>
+</dd><dt><code>base_currency</code>
+<dd>
+<p>base currency string (e.g. “<code>XBT</code>”)</p>
+</dd><dt><code>quote_currency</code>
+<dd>
+<p>quote currency string (e.g. “<code>USD</code>”)</p>
+</dd><dt><code>asks_data_file</code>
+<dd>
+<p>path to CSV file containing ask data (e.g. “<code>data/asks.csv</code>”)</p>
+</dd><dt><code>bids_data_file</code>
+<dd>
+<p>path to CSV file containg bid data (e.g. “<code>data/bids.csv</code>”)</p>
+</dd></dl>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="Exchange.html#method-c-new"><code>Exchange::new</code></a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File libs/ExchangeSimulation.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">timer</span>, <span class="ruby-identifier">base_currency</span>, <span class="ruby-identifier">quote_currency</span>, <span class="ruby-identifier">asks_data_file</span>, <span class="ruby-identifier">bids_data_file</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">timer</span>, <span class="ruby-identifier">base_currency</span>, <span class="ruby-identifier">quote_currency</span>)
+      
+  <span class="ruby-ivar">@run</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@run_mutex</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+  
+  <span class="ruby-ivar">@last_order_id</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@order_id_mutex</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+  
+  <span class="ruby-comment"># order is executed between 0 and @max_order_execution_time seconds after order is placed</span>
+  <span class="ruby-ivar">@max_order_execution_time</span> = <span class="ruby-value">30</span> <span class="ruby-comment"># [s]</span>
+  
+  <span class="ruby-comment"># the @Order struct represents every information associated with an order</span>
+  <span class="ruby-ivar">@Order</span> = <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:order_id</span>, <span class="ruby-value">:type</span>, <span class="ruby-value">:creation_time</span>, <span class="ruby-value">:execution_time</span>, <span class="ruby-value">:fee_rate</span>, <span class="ruby-value">:fee</span>, <span class="ruby-value">:fee_in_base_currency</span>, <span class="ruby-value">:volume</span>, <span class="ruby-value">:price</span>, <span class="ruby-value">:canceled</span>)
+  <span class="ruby-ivar">@orders</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@orders_mutex</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+  
+  <span class="ruby-comment"># fees charged by the exchange</span>
+  <span class="ruby-ivar">@fees_taker</span> = <span class="ruby-value">0.0026</span>
+  <span class="ruby-ivar">@fees_maker</span> = <span class="ruby-value">0.0016</span>
+  
+  <span class="ruby-ivar">@BalancePosition</span> = <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:time</span>, <span class="ruby-value">:base_currency</span>, <span class="ruby-value">:quote_currency</span>)
+  <span class="ruby-ivar">@balance</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@balance_mutex</span> = <span class="ruby-constant">Mutex</span>.<span class="ruby-identifier">new</span>
+  
+  <span class="ruby-identifier">asks_cache_file</span> = <span class="ruby-identifier">asks_data_file</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.cache&quot;</span>
+  <span class="ruby-identifier">bids_cache_file</span> = <span class="ruby-identifier">bids_data_file</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.cache&quot;</span>
+  
+  <span class="ruby-comment"># check if cache file exits, otherwise load .csv file</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">asks_cache_file</span>)
+    <span class="ruby-identifier">$logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-string">&quot;loading asks data from cache file...&quot;</span>)
+    <span class="ruby-identifier">ser_asks</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">binread</span>(<span class="ruby-identifier">asks_cache_file</span>)
+    <span class="ruby-ivar">@asks</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">ser_asks</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">$logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-string">&quot;loading asks data from CSV file...&quot;</span>)
+    <span class="ruby-constant">IO</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-identifier">asks_data_file</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">to_f</span>}      
+      <span class="ruby-identifier">csv_timestamp</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">3</span>]
+      <span class="ruby-identifier">csv_ask</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>]
+
+      <span class="ruby-identifier">ask</span> = <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">bsearch</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">time_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">time_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">csv_timestamp</span>}
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">ask</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-ivar">@asks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@TimePoint</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">csv_timestamp</span>, <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">csv_ask</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">ask</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">csv_ask</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-comment"># serialize array into cache file</span>
+    <span class="ruby-identifier">$logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-string">&quot;serializing asks data to cache file...&quot;</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;asks cache file already exists&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">asks_cache_file</span>)
+    <span class="ruby-identifier">ser_asks</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-ivar">@asks</span>)    
+    <span class="ruby-constant">IO</span>.<span class="ruby-identifier">binwrite</span>(<span class="ruby-identifier">asks_cache_file</span>, <span class="ruby-identifier">ser_asks</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># check if cache file exits, otherwise load .csv file</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">bids_cache_file</span>)
+    <span class="ruby-identifier">$logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-string">&quot;loading bids data from cache file...&quot;</span>)
+    <span class="ruby-identifier">ser_bids</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">binread</span>(<span class="ruby-identifier">bids_cache_file</span>)
+    <span class="ruby-ivar">@bids</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">ser_bids</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">$logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-string">&quot;loading bids data from CSV file...&quot;</span>)
+    <span class="ruby-constant">IO</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-identifier">bids_data_file</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">to_f</span>}
+      <span class="ruby-identifier">csv_timestamp</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">3</span>]
+      <span class="ruby-identifier">csv_bid</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>]
+
+      <span class="ruby-identifier">bid</span> = <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">bsearch</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">time_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">time_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">csv_timestamp</span>}
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">bid</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-ivar">@bids</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@TimePoint</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">csv_timestamp</span>, <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">csv_bid</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">bid</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">csv_bid</span>
+      <span class="ruby-keyword">end</span>      
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-comment"># serialize array into cache file</span>
+    <span class="ruby-identifier">$logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-string">&quot;serializing bids data to cache file...&quot;</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;bids cache file already exists&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">bids_cache_file</span>)
+    <span class="ruby-identifier">ser_bids</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-ivar">@bids</span>)    
+    <span class="ruby-constant">IO</span>.<span class="ruby-identifier">binwrite</span>(<span class="ruby-identifier">bids_cache_file</span>, <span class="ruby-identifier">ser_bids</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># sort ascendingly based on time</span>
+  <span class="ruby-identifier">$logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-string">&quot;sorting database...&quot;</span>)
+  <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">sort!</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">time</span>}
+  <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">sort!</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">time</span>}
+  
+  <span class="ruby-identifier">start_time</span> = [<span class="ruby-ivar">@asks</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">time</span>, <span class="ruby-ivar">@bids</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">time</span>].<span class="ruby-identifier">min</span>
+  <span class="ruby-identifier">stop_time</span> = [<span class="ruby-ivar">@asks</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">time</span>, <span class="ruby-ivar">@bids</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">time</span>].<span class="ruby-identifier">max</span>
+  <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">set_time</span>(<span class="ruby-identifier">start_time</span>)
+  <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">stop_time</span> = <span class="ruby-identifier">stop_time</span>
+  
+  <span class="ruby-identifier">$logger</span>.<span class="ruby-identifier">info</span>(<span class="ruby-node">&quot;loaded data of #{((stop_time-start_time)/3600.0/24.0).round(2)} days&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-cancel_order" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cancel_order</span><span
+            class="method-args">(order_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Cancel an order.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>order_id</code>
+<dd>
+<p>the order ID to be canceled (this is in fact the transaction ID)</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="cancel_order-source">
+            <pre><span class="ruby-comment"># File libs/ExchangeSimulation.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cancel_order</span>(<span class="ruby-identifier">order_id</span>)
+  <span class="ruby-identifier">order</span> = <span class="ruby-ivar">@orders_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-ivar">@orders</span>.<span class="ruby-identifier">index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">order</span><span class="ruby-operator">|</span> <span class="ruby-identifier">order</span>.<span class="ruby-identifier">order_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">order_id</span>}
+    <span class="ruby-ivar">@orders</span>[<span class="ruby-identifier">idx</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;order ID not existing&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">order</span>.<span class="ruby-identifier">nil?</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">order</span>.<span class="ruby-identifier">execution_time</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">get_time</span>
+    <span class="ruby-identifier">order</span>.<span class="ruby-identifier">canceled</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">order</span>.<span class="ruby-identifier">execution_time</span> = <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">NAN</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_balance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_balance</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current balance on the simulated exchange.</p>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>base_currency_balance</code>
+<dd>
+<p>base currency balance</p>
+</dd><dt><code>quote_currency_balance</code>
+<dd>
+<p>quote currency balance</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_balance-source">
+            <pre><span class="ruby-comment"># File libs/ExchangeSimulation.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_balance</span>
+  <span class="ruby-identifier">balance_base_currency</span> = <span class="ruby-ivar">@initial_balance_base_currency</span>
+  <span class="ruby-identifier">balance_quote_currency</span> = <span class="ruby-ivar">@initial_balance_quote_currency</span>
+  
+  <span class="ruby-identifier">past_positions</span> = <span class="ruby-ivar">@balance</span>.<span class="ruby-identifier">take_while</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">position</span><span class="ruby-operator">|</span> <span class="ruby-identifier">position</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">get_time</span>}
+  <span class="ruby-identifier">past_positions</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">position</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">balance_base_currency</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">position</span>.<span class="ruby-identifier">base_currency</span>
+    <span class="ruby-identifier">balance_quote_currency</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">position</span>.<span class="ruby-identifier">quote_currency</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">balance_base_currency</span>, <span class="ruby-identifier">balance_quote_currency</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_order_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_order_status</span><span
+            class="method-args">(order_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the status of an order.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>order_id</code>
+<dd>
+<p>the order ID for which the status is requested (this is in fact the transaction ID)</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>OrderStatus</code>
+<dd>
+<p>@<code>OrderStatus</code> struct with information about the order: status (open/closed/canceled), requested volume, executed volume, fee, price, type (buy/sell)</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="get_order_status-source">
+            <pre><span class="ruby-comment"># File libs/ExchangeSimulation.rb, line 283</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_order_status</span>(<span class="ruby-identifier">order_id</span>)
+
+  <span class="ruby-identifier">order</span> = <span class="ruby-ivar">@orders_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-ivar">@orders</span>.<span class="ruby-identifier">index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">order</span><span class="ruby-operator">|</span> <span class="ruby-identifier">order</span>.<span class="ruby-identifier">order_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">order_id</span>}
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;order ID not existing&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-ivar">@orders</span>[<span class="ruby-identifier">idx</span>]
+  <span class="ruby-keyword">end</span>    
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">order</span>.<span class="ruby-identifier">canceled</span>
+    <span class="ruby-identifier">status</span> = <span class="ruby-value">:canceled</span>
+    <span class="ruby-identifier">vol</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">vol_exec</span> = <span class="ruby-identifier">vol</span>
+    <span class="ruby-identifier">type</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">type</span>
+    <span class="ruby-identifier">price</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">fee</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">current_time</span> = <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">get_time</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">order</span>.<span class="ruby-identifier">execution_time</span>
+      <span class="ruby-identifier">status</span> = <span class="ruby-value">:closed</span>
+      <span class="ruby-identifier">vol</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">volume</span>
+      <span class="ruby-identifier">vol_exec</span> = <span class="ruby-identifier">vol</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">type</span>
+      <span class="ruby-identifier">price</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">price</span>
+      <span class="ruby-identifier">fee</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">fee</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">status</span> = <span class="ruby-value">:open</span>
+      <span class="ruby-identifier">vol</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">vol_exec</span> = <span class="ruby-identifier">vol</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">type</span>
+      <span class="ruby-identifier">price</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">fee</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+      
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@OrderStatus</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">status</span>, <span class="ruby-identifier">vol</span>, <span class="ruby-identifier">vol_exec</span>, <span class="ruby-identifier">fee</span>, <span class="ruby-identifier">price</span>, <span class="ruby-identifier">type</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-place_limit_order" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">place_limit_order</span><span
+            class="method-args">(type, volume, limit, fee_in_base_currency)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Places a limit order. The order will be executed in a time interval starting at the simulated time of the method call and with an interval length of maximal @<code>max_order_execution_time</code> seconds.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>type</code>
+<dd>
+<p>specify if it&#39;s an sell or buy order (e.g. <code>:buy</code> or <code>:sell</code>)</p>
+</dd><dt><code>limit</code>
+<dd>
+<p>limit price</p>
+</dd><dt><code>volume</code>
+<dd>
+<p>order volume in base currency</p>
+</dd><dt><code>fee_in_base_currency</code>
+<dd>
+<p>if true, prefer fee in base currency, otherwise in quote currency</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>transactions</code>
+<dd>
+<p>array of transaction IDs; exactly one transaction ID is contained in the array</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="place_limit_order-source">
+            <pre><span class="ruby-comment"># File libs/ExchangeSimulation.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">place_limit_order</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">volume</span>, <span class="ruby-identifier">limit</span>, <span class="ruby-identifier">fee_in_base_currency</span>)
+  <span class="ruby-identifier">order_id</span> = <span class="ruby-ivar">@order_id_mutex</span>.<span class="ruby-identifier">synchronize</span> {<span class="ruby-ivar">@last_order_id</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>}
+  
+  <span class="ruby-identifier">order_creation_time</span> = <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">get_time</span>    
+  
+  <span class="ruby-identifier">order_execution_time</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">price</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">idx</span> = <span class="ruby-keyword">nil</span>
+  
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:buy</span>
+    <span class="ruby-identifier">future_asks</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@database_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;database is empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">empty?</span>        
+      <span class="ruby-identifier">future_asks</span> = <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">order_creation_time</span>} 
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">future_asks</span>.<span class="ruby-identifier">index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">get_buy_price_priv</span>(<span class="ruby-identifier">volume</span>, <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">value</span>) <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">limit</span>}
+    
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">order_execution_time</span> = <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">NAN</span>
+      <span class="ruby-identifier">price</span> = <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">NAN</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">order_execution_time</span> = <span class="ruby-identifier">future_asks</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">time</span>
+      <span class="ruby-identifier">price</span> = <span class="ruby-identifier">get_buy_price_priv</span>(<span class="ruby-identifier">volume</span>, <span class="ruby-identifier">future_asks</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:sell</span>
+    <span class="ruby-identifier">future_bids</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@database_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;database is empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">empty?</span>        
+      <span class="ruby-identifier">future_bids</span> = <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">order_creation_time</span>} 
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">future_bids</span>.<span class="ruby-identifier">index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">get_sell_price_priv</span>(<span class="ruby-identifier">volume</span>, <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">value</span>) <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">limit</span>}
+    
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">order_execution_time</span> = <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">NAN</span>
+      <span class="ruby-identifier">price</span> = <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">NAN</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">order_execution_time</span> = <span class="ruby-identifier">future_bids</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">time</span>
+      <span class="ruby-identifier">price</span> = <span class="ruby-identifier">get_sell_price_priv</span>(<span class="ruby-identifier">volume</span>, <span class="ruby-identifier">future_bids</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;unknown order type&quot;</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">fee_rate</span> = <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">NAN</span>
+    <span class="ruby-identifier">fee</span> = <span class="ruby-constant">Float</span><span class="ruby-operator">::</span><span class="ruby-constant">NAN</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fee_rate</span> = <span class="ruby-identifier">idx</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@fees_maker</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@fees_taker</span>
+    <span class="ruby-identifier">fee</span> = <span class="ruby-identifier">volume</span><span class="ruby-operator">*</span><span class="ruby-identifier">fee_rate</span><span class="ruby-operator">*</span><span class="ruby-identifier">price</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">order</span> = <span class="ruby-ivar">@Order</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">order_id</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">order_creation_time</span>, <span class="ruby-identifier">order_execution_time</span>, <span class="ruby-identifier">fee_rate</span>, <span class="ruby-identifier">fee</span>, <span class="ruby-identifier">fee_in_base_currency</span>, <span class="ruby-identifier">volume</span>, <span class="ruby-identifier">price</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-ivar">@orders_mutex</span>.<span class="ruby-identifier">synchronize</span> {<span class="ruby-ivar">@orders</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">order</span>}
+  <span class="ruby-identifier">update_balance</span>(<span class="ruby-identifier">order</span>)
+  
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">order_id</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-place_market_order" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">place_market_order</span><span
+            class="method-args">(type, volume, fee_in_base_currency)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Places a market order. The order will be executed in a time interval starting at the simulated time of the method call and with an interval length of maximal @<code>max_order_execution_time</code> seconds.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>type</code>
+<dd>
+<p>specify if it&#39;s an sell or buy order (e.g. <code>:buy</code> or <code>:sell</code>)</p>
+</dd><dt><code>volume</code>
+<dd>
+<p>order volume in base currency</p>
+</dd><dt><code>fee_in_base_currency</code>
+<dd>
+<p>if true, prefer fee in base currency, otherwise in quote currency</p>
+</dd></dl>
+
+<p><strong>Returns:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>transactions</code>
+<dd>
+<p>array of transaction IDs; exactly one transaction ID is contained in the array</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="place_market_order-source">
+            <pre><span class="ruby-comment"># File libs/ExchangeSimulation.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">place_market_order</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">volume</span>, <span class="ruby-identifier">fee_in_base_currency</span>)
+  <span class="ruby-identifier">order_id</span> = <span class="ruby-ivar">@order_id_mutex</span>.<span class="ruby-identifier">synchronize</span> {<span class="ruby-ivar">@last_order_id</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>}
+  
+  <span class="ruby-identifier">order_creation_time</span> = <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">get_time</span>
+  <span class="ruby-identifier">order_execution_time</span> = <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">get_time</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@max_order_execution_time</span><span class="ruby-operator">*</span><span class="ruby-identifier">rand</span>
+
+  <span class="ruby-identifier">price</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:buy</span>
+    <span class="ruby-identifier">current_asks</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@database_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;database is empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">idx</span> = <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">rindex</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">order_execution_time</span>}      
+      <span class="ruby-identifier">current_asks</span> = <span class="ruby-ivar">@asks</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">get_buy_price_priv</span>(<span class="ruby-identifier">volume</span>, <span class="ruby-identifier">current_asks</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:sell</span>
+    <span class="ruby-identifier">current_bids</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@database_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;database is empty&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">empty?</span>      
+      <span class="ruby-identifier">idx</span> = <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">rindex</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data_point</span><span class="ruby-operator">|</span> <span class="ruby-identifier">data_point</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">order_execution_time</span>}      
+      <span class="ruby-identifier">current_bids</span> = <span class="ruby-ivar">@bids</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">get_sell_price_priv</span>(<span class="ruby-identifier">volume</span>, <span class="ruby-identifier">current_bids</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;unknown order type&quot;</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">fee_rate</span> = <span class="ruby-ivar">@fees_taker</span>
+  <span class="ruby-identifier">fee</span> = <span class="ruby-identifier">volume</span><span class="ruby-operator">*</span><span class="ruby-identifier">fee_rate</span><span class="ruby-operator">*</span><span class="ruby-identifier">price</span>
+
+  <span class="ruby-identifier">order</span> = <span class="ruby-ivar">@Order</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">order_id</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">order_creation_time</span>, <span class="ruby-identifier">order_execution_time</span>, <span class="ruby-identifier">fee_rate</span>, <span class="ruby-identifier">fee</span>, <span class="ruby-identifier">fee_in_base_currency</span>, <span class="ruby-identifier">volume</span>, <span class="ruby-identifier">price</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-ivar">@orders_mutex</span>.<span class="ruby-identifier">synchronize</span> {<span class="ruby-ivar">@orders</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">order</span>}
+  <span class="ruby-identifier">update_balance</span>(<span class="ruby-identifier">order</span>)
+  
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">order_id</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Resets the internal state of the exchange instance.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File libs/ExchangeSimulation.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset</span>
+  <span class="ruby-ivar">@orders</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@balance</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  
+  <span class="ruby-identifier">start_time</span> = [<span class="ruby-ivar">@asks</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">time</span>, <span class="ruby-ivar">@bids</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">time</span>].<span class="ruby-identifier">min</span>
+  <span class="ruby-identifier">stop_time</span> = [<span class="ruby-ivar">@asks</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">time</span>, <span class="ruby-ivar">@bids</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">time</span>].<span class="ruby-identifier">max</span>
+  <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">set_time</span>(<span class="ruby-identifier">start_time</span>)
+  <span class="ruby-ivar">@timer</span>.<span class="ruby-identifier">stop_time</span> = <span class="ruby-identifier">stop_time</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-show_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show_data</span><span
+            class="method-args">(plot_file)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Write a plot of buy and sell prices in an HTML file</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>plot_file</code>
+<dd>
+<p>file name of HTML output file</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="show_data-source">
+            <pre><span class="ruby-comment"># File libs/ExchangeSimulation.rb, line 324</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">show_data</span>(<span class="ruby-identifier">plot_file</span>)
+  <span class="ruby-identifier">plot</span> = <span class="ruby-constant">Nyaplot</span><span class="ruby-operator">::</span><span class="ruby-constant">Plot</span>.<span class="ruby-identifier">new</span>
+  
+  <span class="ruby-identifier">ask_time</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">bid_time</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">ask_price</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">bid_price</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@asks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ask</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">time</span> = (<span class="ruby-identifier">ask</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@asks</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">time</span>) <span class="ruby-operator">/</span> (<span class="ruby-value">3600.0</span><span class="ruby-operator">*</span><span class="ruby-value">24.0</span>)      
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ask_time</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">ask_time</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">&gt;=</span> <span class="ruby-value">600.0</span><span class="ruby-operator">/</span>(<span class="ruby-value">24.0</span><span class="ruby-operator">*</span><span class="ruby-value">3600.0</span>)        
+      <span class="ruby-identifier">ask_time</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">time</span>
+      <span class="ruby-identifier">ask_price</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ask</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">min</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>]}[<span class="ruby-value">0</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@bids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">bid</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">time</span> = (<span class="ruby-identifier">bid</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@bids</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">time</span>) <span class="ruby-operator">/</span> (<span class="ruby-value">3600.0</span><span class="ruby-operator">*</span><span class="ruby-value">24.0</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">bid_time</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bid_time</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">&gt;=</span> <span class="ruby-value">600.0</span><span class="ruby-operator">/</span>(<span class="ruby-value">24.0</span><span class="ruby-operator">*</span><span class="ruby-value">3600.0</span>)
+      <span class="ruby-identifier">bid_time</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">time</span>
+      <span class="ruby-identifier">bid_price</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">bid</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">max</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>]}[<span class="ruby-value">0</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">colors</span> = [<span class="ruby-string">&quot;#3182bd&quot;</span>, <span class="ruby-string">&quot;#31a354&quot;</span>]
+  <span class="ruby-identifier">ask_line</span> = <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:line</span>, <span class="ruby-identifier">ask_time</span>, <span class="ruby-identifier">ask_price</span>)
+  <span class="ruby-identifier">bid_line</span> = <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">add</span>(<span class="ruby-value">:line</span>, <span class="ruby-identifier">bid_time</span>, <span class="ruby-identifier">bid_price</span>)
+  <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">x_label</span>(<span class="ruby-string">&quot;time&quot;</span>)
+  <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">y_label</span>(<span class="ruby-string">&quot;price&quot;</span>)
+  <span class="ruby-identifier">ask_line</span>.<span class="ruby-identifier">color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-value">0</span>])
+  <span class="ruby-identifier">ask_line</span>.<span class="ruby-identifier">title</span>(<span class="ruby-string">&quot;asks&quot;</span>)
+  <span class="ruby-identifier">bid_line</span>.<span class="ruby-identifier">color</span>(<span class="ruby-identifier">colors</span>[<span class="ruby-value">1</span>])
+  <span class="ruby-identifier">bid_line</span>.<span class="ruby-identifier">title</span>(<span class="ruby-string">&quot;bids&quot;</span>)
+  <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">legend</span>(<span class="ruby-keyword">true</span>)
+  
+  <span class="ruby-identifier">plot</span>.<span class="ruby-identifier">export_html</span>(<span class="ruby-identifier">plot_file</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-update_balance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_balance</span><span
+            class="method-args">(order)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update the balance on the simulated exchange with the effects of an order.</p>
+
+<p><strong>Params:</strong></p>
+<dl class="rdoc-list note-list"><dt><code>order</code>
+<dd>
+<p>@<code>Order</code> struct representing an order</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="update_balance-source">
+            <pre><span class="ruby-comment"># File libs/ExchangeSimulation.rb, line 366</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_balance</span>(<span class="ruby-identifier">order</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">order</span>.<span class="ruby-identifier">fee_in_base_currency</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">base_currency_fee</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">fee</span><span class="ruby-operator">/</span><span class="ruby-identifier">order</span>.<span class="ruby-identifier">price</span>
+    <span class="ruby-identifier">quote_currency_fee</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">base_currency_fee</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">quote_currency_fee</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">fee</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;unknown fee setting&quot;</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">order</span>.<span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:buy</span>
+    <span class="ruby-identifier">base_currency_diff</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">volume</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">base_currency_fee</span>
+    <span class="ruby-identifier">quote_currency_diff</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">order</span>.<span class="ruby-identifier">volume</span><span class="ruby-operator">*</span><span class="ruby-identifier">order</span>.<span class="ruby-identifier">price</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">quote_currency_fee</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:sell</span>
+    <span class="ruby-identifier">base_currency_diff</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">order</span>.<span class="ruby-identifier">volume</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">base_currency_fee</span>
+    <span class="ruby-identifier">quote_currency_diff</span> = <span class="ruby-identifier">order</span>.<span class="ruby-identifier">volume</span><span class="ruby-operator">*</span><span class="ruby-identifier">order</span>.<span class="ruby-identifier">price</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">quote_currency_fee</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-string">&quot;unknown order type&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@balance_mutex</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">new_position</span> = <span class="ruby-ivar">@BalancePosition</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">order</span>.<span class="ruby-identifier">execution_time</span>, <span class="ruby-identifier">base_currency_diff</span>, <span class="ruby-identifier">quote_currency_diff</span>)      
+    <span class="ruby-identifier">insert_idx</span> = <span class="ruby-ivar">@balance</span>.<span class="ruby-identifier">bsearch_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">position</span><span class="ruby-operator">|</span> <span class="ruby-identifier">position</span>.<span class="ruby-identifier">time</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">new_position</span>.<span class="ruby-identifier">time</span>}      
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">insert_idx</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-ivar">@balance</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">new_position</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@balance</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-identifier">insert_idx</span>, <span class="ruby-identifier">new_position</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
