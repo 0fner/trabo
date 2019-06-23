@@ -87,8 +87,10 @@ the simulation again.
 === 4. Start trading
 
 When you are confident that your trading strategy can be a winner, it's time to start trading! First, create an
-account at {Kraken crypto exchange}[https://www.kraken.com] and obtain an API key/secret pair. Save the API
-key/secret pair in +kraken_api_secret.rb+.
+account at {Kraken crypto exchange}[https://www.kraken.com] and obtain an API key/secret pair. Create the Ruby file
++kraken_api_secret.rb+ and save the API key/secret pair in it:
+  API_KEY = 'DUMMY_KEY'
+  API_SECRET = 'DUMMY_SECRECT'
 
 *WARNING:* Take care that no one except you can access this file! Everyone who has access to your API key/secret
 pair can access your Kraken account!
