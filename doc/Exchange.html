@@ -19,7 +19,6 @@
 
 
 
-
 <body id="top" role="document" class="class">
 <nav role="navigation">
   <div id="project-navigation">
@@ -113,7 +112,10 @@
 
   <section class="description">
     
-<p>This class is the parent class for all exchange classes.  To support a particular exchange, one needs to derive from this class and implement the following methods (see <a href="ExchangeSimulation.html"><code>ExchangeSimulation</code></a> for an example):</p>
+<p>This class is the parent class for all exchange classes.  To support a
+particular exchange, one needs to derive from this class and implement the
+following methods (see <a
+href="ExchangeSimulation.html">ExchangeSimulation</a> for an example):</p>
 <ul><li>
 <p>get_balance</p>
 </li><li>
@@ -197,7 +199,7 @@
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>timer</code>
 <dd>
-<p><a href="Timer.html"><code>Timer</code></a> instance</p>
+<p><a href="Timer.html">Timer</a> instance</p>
 </dd><dt><code>base_currency</code>
 <dd>
 <p>base currency string (e.g. “<code>XBT</code>”)</p>
@@ -258,7 +260,8 @@
 
         <div class="method-description">
           
-          <p>Returns the median of the buy price for the requested volume in a given time interval.</p>
+          <p>Returns the median of the buy price for the requested volume in a given
+time interval.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>vol</code>
@@ -310,7 +313,8 @@
 
         <div class="method-description">
           
-          <p>Returns the median of the sell price for the requested volume in a given time interval.</p>
+          <p>Returns the median of the sell price for the requested volume in a given
+time interval.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>vol</code>
@@ -419,7 +423,8 @@
 
         <div class="method-description">
           
-          <p>Returns the history of buy prices for the requested volume in a given time interval.</p>
+          <p>Returns the history of buy prices for the requested volume in a given time
+interval.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>vol</code>
@@ -552,7 +557,8 @@
 
         <div class="method-description">
           
-          <p>Returns the history of sell prices for the requested volume in a given time interval.</p>
+          <p>Returns the history of sell prices for the requested volume in a given time
+interval.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>vol</code>
@@ -628,7 +634,8 @@
 
         <div class="method-description">
           
-          <p>Returns the slope of the buy price for the requested volume in a given time interval.</p>
+          <p>Returns the slope of the buy price for the requested volume in a given time
+interval.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>vol</code>
@@ -682,7 +689,8 @@
 
         <div class="method-description">
           
-          <p>Returns the slope of the sell price for the requested volume in a given time interval.</p>
+          <p>Returns the slope of the sell price for the requested volume in a given
+time interval.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>vol</code>
@@ -736,7 +744,8 @@
 
         <div class="method-description">
           
-          <p>Resets the internal state of the exchange instance. This method is only required if the exchange is used for backtesting.</p>
+          <p>Resets the internal state of the exchange instance. This method is only
+required if the exchange is used for backtesting.</p>
           
           
 
@@ -840,7 +849,8 @@
 
         <div class="method-description">
           
-          <p>Returns the weighted buy price for the requested volume given the asks from an order book</p>
+          <p>Returns the weighted buy price for the requested volume given the asks from
+an order book</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>vol</code>
@@ -848,7 +858,8 @@
 <p>volume</p>
 </dd><dt><code>asks</code>
 <dd>
-<p>array of asks from the order book, each ask is again a 2-element array where index 0 is the price and index 1 is the volume</p>
+<p>array of asks from the order book, each ask is again a 2-element array
+where index 0 is the price and index 1 is the volume</p>
 </dd></dl>
 
 <p><strong>Returns:</strong></p>
@@ -905,7 +916,8 @@
 
         <div class="method-description">
           
-          <p>Returns the weighted sell price for the requested volume given the bids from an order book</p>
+          <p>Returns the weighted sell price for the requested volume given the bids
+from an order book</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>vol</code>
@@ -913,7 +925,8 @@
 <p>volume</p>
 </dd><dt><code>bids</code>
 <dd>
-<p>array of bids from the order book, each bid is again a 2-element array where index 0 is the price and index 1 is the volume</p>
+<p>array of bids from the order book, each bid is again a 2-element array
+where index 0 is the price and index 1 is the volume</p>
 </dd></dl>
 
 <p><strong>Returns:</strong></p>
@@ -960,13 +973,12 @@
     </section>
   
   </section>
-
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

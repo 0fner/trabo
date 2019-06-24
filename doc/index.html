@@ -19,7 +19,6 @@
 
 
 
-
 <body id="top" role="document" class="file">
 <nav role="navigation">
   <div id="project-navigation">
@@ -98,7 +97,9 @@
 
 <h1 id="label-Trabo">Trabo<span><a href="#label-Trabo">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<p>Trabo (TRAdinBOt) is collection of tools for automatic trading on <a href="https://www.kraken.com">Kraken crypto exchange</a>. It comprises 3 tools written in Ruby:</p>
+<p>Trabo (TRAdinBOt) is collection of tools for automatic trading on <a
+href="https://www.kraken.com">Kraken crypto exchange</a>. It comprises 3
+tools written in Ruby:</p>
 <ul><li>
 <p><code>DataCollection.rb</code></p>
 </li><li>
@@ -107,14 +108,18 @@
 <p><code>Bot.rb</code></p>
 </li></ul>
 
-<p>Let&#39;s assume you know the basics about cryptocurrencies and how trading on exchanges works, and now you want to participate in the money game with your own and very special trading strategy. Fine, this tool collection can probably help you! But keep in mind: testing your strategy before betting your money is crucial!</p>
+<p>Let&#39;s assume you know the basics about cryptocurrencies and how trading
+on exchanges works, and now you want to participate in the money game with
+your own and very special trading strategy. Fine, this tool collection can
+probably help you! But keep in mind: testing your strategy before betting
+your money is crucial!</p>
 
 <h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
-<ol><li>
-<p>Install Ruby. The programs were tested with Ruby 2.5, but newer versions will probably work too.</p>
+<ul><li>
+<p>Install Ruby. The programs were tested with Ruby 2.5, but newer versions
+will probably work too.</p>
 </li><li>
 <p>Install the following Ruby gems:</p>
-</li></ol>
 <ul><li>
 <p><code>statsample</code></p>
 </li><li>
@@ -126,16 +131,35 @@
 </li><li>
 <p><code>hashie</code></p>
 </li></ul>
+</li><li>
+<p>Create the following directories within the folder which contains the Trabo
+Ruby programs:</p>
+<ul><li>
+<p><code>data</code></p>
+</li><li>
+<p><code>logs</code></p>
+</li></ul>
+</li></ul>
 
 <h2 id="label-How+to+run+the+programs">How to run the programs<span><a href="#label-How+to+run+the+programs">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <h3 id="label-1.+Collect+test+data">1. Collect test data<span><a href="#label-1.+Collect+test+data">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>Before you start trading you need to collect data, and the more the better. It should not be less than data from half a year. Use <code>DataCollection.rb</code> to collect test data (i.e. the orderbook containing asks and bids). Before you start <code>DataCollection.rb</code>, have a look on the comments inside it. They help you with the configuration.</p>
+<p>Before you start trading you need to collect data, and the more the better.
+It should not be less than data from half a year. Use
+<code>DataCollection.rb</code> to collect test data (i.e. the orderbook
+containing asks and bids). Before you start <code>DataCollection.rb</code>,
+have a look on the comments inside it. They help you with the
+configuration.</p>
 
-<p>You can also get these data from somewhere else and convert it into the correct format. Asks and bids files are simply CSV files with the following columns:</p>
+<p>You can also get these data from somewhere else and convert it into the
+correct format. Asks and bids files are simply CSV files with the following
+columns:</p>
 <ul><li>
-<p>columns: <code>ask</code>/<code>bid</code> <code>price</code> | <code>volume</code> | <code>exchange</code> <code>unix</code> <code>timestamp</code> | <code>local</code> <code>unix</code> <code>timestamp</code></p>
+<p>columns: <code>ask</code>/<code>bid</code> <code>price</code> |
+<code>volume</code> | <code>exchange</code> <code>unix</code>
+<code>timestamp</code> | <code>local</code> <code>unix</code>
+<code>timestamp</code></p>
 </li></ul>
 
 <h3 id="label-2.+Implement+you+trading+strategy">2. Implement you trading strategy<span><a href="#label-2.+Implement+you+trading+strategy">&para;</a> <a href="#top">&uarr;</a></span></h3>
@@ -150,7 +174,8 @@
 </li><li>
 <p>implement the <code>initializer</code> method</p>
 <ul><li>
-<p>it has two arguments: <code>timer</code> and <code>exchange</code> instances; store them as instance variables</p>
+<p>it has two arguments: <code>timer</code> and <code>exchange</code>
+instances; store them as instance variables</p>
 </li><li>
 <p>implement the rest as needed</p>
 </li></ul>
@@ -159,36 +184,47 @@
 <ul><li>
 <p>it has one argument: the current Unix timestamp</p>
 </li><li>
-<p>this method is called with the frequency specified in <code>BackTesting.rb</code> or <code>Bot.rb</code></p>
+<p>this method is called with the frequency specified in
+<code>BackTesting.rb</code> or <code>Bot.rb</code></p>
 </li><li>
-<p>use this method to open and close your positions; you may find the methods in the <code>Exchange</code> class helpful, as well as the private methods <code>create_buy_thread</code> and <code>create_sell_thread</code> in <code>StrategyScroogeMcDuck.rb</code></p>
+<p>use this method to open and close your positions; you may find the methods
+in the <code>Exchange</code> class helpful, as well as the private methods
+<code>create_buy_thread</code> and <code>create_sell_thread</code> in
+<code>StrategyScroogeMcDuck.rb</code></p>
 </li></ul>
 </li><li>
 <p>implement the <code>finish</code> method</p>
 <ul><li>
-<p>this method is responsible to clean up all operations and, e.g wait for all buy/sell threads to finish</p>
+<p>this method is responsible to clean up all operations and, e.g wait for all
+buy/sell threads to finish</p>
 </li></ul>
 </li><li>
 <p>implement the <code>get_statistics</code> method</p>
 <ul><li>
 <p>it has one argument: the position ID</p>
 </li><li>
-<p>this method is supposed to return statistics about closed positions (e.g. the return) since the given position ID</p>
+<p>this method is supposed to return statistics about closed positions (e.g.
+the return) since the given position ID</p>
 </li><li>
 <p>it returns 3 variables:</p>
 <ul><li>
-<p>statistics: an array with items corresponding to closed positions; the content of an array item is up to you (you should return information you deem useful)</p>
+<p>statistics: an array with items corresponding to closed positions; the
+content of an array item is up to you (you should return information you
+deem useful)</p>
 </li><li>
 <p>errors: number of occurred errors</p>
 </li><li>
-<p>last position ID: the ID of the newest closed position (use this ID as the position ID argument when you call this method for the next time)</p>
+<p>last position ID: the ID of the newest closed position (use this ID as the
+position ID argument when you call this method for the next time)</p>
 </li></ul>
 </li></ul>
 </li></ul>
 
 <h3 id="label-3.+Do+backtesting">3. Do backtesting<span><a href="#label-3.+Do+backtesting">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>After you have recorded some test data and created the trading strategy, it&#39;s time to test how your trading strategy performs. Configure <code>BackTesting.rb</code>, in particular set the following variables:</p>
+<p>After you have recorded some test data and created the trading strategy,
+it&#39;s time to test how your trading strategy performs. Configure
+<code>BackTesting.rb</code>, in particular set the following variables:</p>
 <ul><li>
 <p><code>base_currency</code></p>
 </li><li>
@@ -203,23 +239,44 @@
 <p><code>initial_quote_balance</code></p>
 </li></ul>
 
-<p>The comments in <code>BackTesting.rb</code> give you more information how to set these variables. After you finished configuring, run <code>BackTesting.rb</code>. It will load your test data and apply your trading strategy, this may take a while. When the simulation has finished, it will tell you how your quote currency balance has changed (hopefully it increased!). It will also create a file containing trading statistics. The content of this statistic file depends on the implementation of the <code>Strategy</code> class. The statistic generated by the template strategy contains an array with the closed positions (including open time, close time, invested volume, returned volume).</p>
+<p>The comments in <code>BackTesting.rb</code> give you more information how
+to set these variables. After you finished configuring, run
+<code>BackTesting.rb</code>. It will load your test data and apply your
+trading strategy, this may take a while. When the simulation has finished,
+it will tell you how your quote currency balance has changed (hopefully it
+increased!). It will also create a file containing trading statistics. The
+content of this statistic file depends on the implementation of the
+<code>Strategy</code> class. The statistic generated by the template
+strategy contains an array with the closed positions (including open time,
+close time, invested volume, returned volume).</p>
 
-<p>Note: you can change your trading strategy implementation after each simulation run. Just press enter when the simulation has finished, and the back testing program will reload your trading strategy file and run the simulation again.</p>
+<p>Note: you can change your trading strategy implementation after each
+simulation run. Just press enter when the simulation has finished, and the
+back testing program will reload your trading strategy file and run the
+simulation again.</p>
 
 <h3 id="label-4.+Start+trading">4. Start trading<span><a href="#label-4.+Start+trading">&para;</a> <a href="#top">&uarr;</a></span></h3>
 
-<p>When you are confident that your trading strategy can be a winner, it&#39;s time to start trading! First, create an account at <a href="https://www.kraken.com">Kraken crypto exchange</a> and obtain an API key/secret pair. Create the Ruby file <code>kraken_api_secret.rb</code> and save the API key/secret pair in it:</p>
+<p>When you are confident that your trading strategy can be a winner, it&#39;s
+time to start trading! First, create an account at <a
+href="https://www.kraken.com">Kraken crypto exchange</a> and obtain an API
+key/secret pair. Create the Ruby file <code>kraken_api_secret.rb</code> and
+save the API key/secret pair in it:</p>
 
 <pre class="ruby"><span class="ruby-constant">API_KEY</span> = <span class="ruby-string">&#39;DUMMY_KEY&#39;</span>
 <span class="ruby-constant">API_SECRET</span> = <span class="ruby-string">&#39;DUMMY_SECRECT&#39;</span>
 </pre>
 
-<p><strong>WARNING:</strong> Take care that no one except you can access this file! Everyone who has access to your API key/secret pair can access your <a href="Kraken.html"><code>Kraken</code></a> account!</p>
+<p><strong>WARNING:</strong> Take care that no one except you can access this
+file! Everyone who has access to your API key/secret pair can access your
+<a href="Kraken.html">Kraken</a> account!</p>
 
-<p>Next, configure <code>Bot.rb</code>, the comments within the file will help you. Finally, run <code>Bot.rb</code> to start trading. Good luck!</p>
+<p>Next, configure <code>Bot.rb</code>, the comments within the file will help
+you. Finally, run <code>Bot.rb</code> to start trading. Good luck!</p>
 
-<p>Note: you can run the trading bot in simulation mode (<code>simulation_mode</code> = <code>true</code>) which disables order placement but gives you access to online prices.</p>
+<p>Note: you can run the trading bot in simulation mode
+(<code>simulation_mode</code> = <code>true</code>) which disables order
+placement but gives you access to online prices.</p>
 
 <h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
@@ -227,24 +284,34 @@
 
 <p>Copyright 2019 Patrick Ofner (patrick@ofner.science)</p>
 
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
 
-<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
 
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
 
 <h2 id="label-Contact">Contact<span><a href="#label-Contact">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>Patrick Ofner &lt;patrick@ofner.science&gt;</p>
-
-
 </main>
 
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

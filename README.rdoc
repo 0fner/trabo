@@ -13,14 +13,18 @@ your money is crucial!
 
 == Installation
 
-1. Install Ruby. The programs were tested with Ruby 2.5, but newer versions will probably work too.
+* Install Ruby. The programs were tested with Ruby 2.5, but newer versions will probably work too.
 
-2. Install the following Ruby gems:
-* +statsample+
-* +nyaplot+
-* +addressable+
-* +httparty+
-* +hashie+
+* Install the following Ruby gems:
+  * +statsample+
+  * +nyaplot+
+  * +addressable+
+  * +httparty+
+  * +hashie+
+
+* Create the following directories within the folder which contains the Trabo Ruby programs:
+  * +data+
+  * +logs+
 
 == How to run the programs
 

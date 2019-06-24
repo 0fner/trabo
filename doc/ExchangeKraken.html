@@ -19,7 +19,6 @@
 
 
 
-
 <body id="top" role="document" class="class">
 <nav role="navigation">
   <div id="project-navigation">
@@ -101,7 +100,8 @@
 
   <section class="description">
     
-<p>This class is for trading on the <a href="https://www.kraken.com">Kraken Exchange</a>.</p>
+<p>This class is for trading on the <a href="https://www.kraken.com">Kraken
+Exchange</a>.</p>
 
   </section>
 
@@ -174,7 +174,7 @@
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>timer</code>
 <dd>
-<p><a href="Timer.html"><code>Timer</code></a> instance</p>
+<p><a href="Timer.html">Timer</a> instance</p>
 </dd><dt><code>base_currency</code>
 <dd>
 <p>base currency string (e.g. “<code>XBT</code>”)</p>
@@ -183,19 +183,23 @@
 <p>quote currency string (e.g. “<code>USD</code>”)</p>
 </dd><dt><code>update_interval</code>
 <dd>
-<p>time-interval between internal database updates with <a href="Kraken.html"><code>Kraken</code></a> <a href="Exchange.html"><code>Exchange</code></a> data</p>
+<p>time-interval between internal database updates with <a
+href="Kraken.html">Kraken</a> <a href="Exchange.html">Exchange</a> data</p>
 </dd><dt><code>database_max_age</code>
 <dd>
-<p>data older than that age are deleted from the internal database (specify age in seconds)</p>
+<p>data older than that age are deleted from the internal database (specify
+age in seconds)</p>
 </dd><dt><code>simulation_mode</code>
 <dd>
-<p>boolean value, if true, disable order placement, order status request and order cancellation on the exchange, the corresponding exchange methods return then dummy values</p>
+<p>boolean value, if true, disable order placement, order status request and
+order cancellation on the exchange, the corresponding exchange methods
+return then dummy values</p>
 </dd></dl>
           
           
             <div class="method-calls-super">
               Calls superclass method
-              <a href="Exchange.html#method-c-new"><code>Exchange::new</code></a>
+              <a href="Exchange.html#method-c-new">Exchange.new</a>
             </div>
           
 
@@ -258,7 +262,9 @@
 
         <div class="method-description">
           
-          <p>Cancel an order. Check with <a href="ExchangeKraken.html#method-i-get_order_status"><code>get_order_status</code></a> if the order has been canceled.</p>
+          <p>Cancel an order. Check with <a
+href="ExchangeKraken.html#method-i-get_order_status">#get_order_status</a>
+if the order has been canceled.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>tx_id</code>
@@ -318,7 +324,8 @@
 
         <div class="method-description">
           
-          <p>Returns the current balance on the <a href="https://www.kraken.com">Kraken Exchange</a>.</p>
+          <p>Returns the current balance on the <a href="https://www.kraken.com">Kraken
+Exchange</a>.</p>
 
 <p><strong>Returns:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>base_currency_balance</code>
@@ -390,7 +397,9 @@
 <p><strong>Returns:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>OrderStatus</code>
 <dd>
-<p>@<code>OrderStatus</code> struct with information about the order: status (open/closed/canceled/pending/expired), requested volume, executed volume, fee, price, type (buy/sell)</p>
+<p>@<code>OrderStatus</code> struct with information about the order: status
+(open/closed/canceled/pending/expired), requested volume, executed volume,
+fee, price, type (buy/sell)</p>
 </dd></dl>
           
           
@@ -466,12 +475,15 @@
 
         <div class="method-description">
           
-          <p>Places a limit order. Check with <a href="ExchangeKraken.html#method-i-get_order_status"><code>get_order_status</code></a> if the order has been executed.</p>
+          <p>Places a limit order. Check with <a
+href="ExchangeKraken.html#method-i-get_order_status">#get_order_status</a>
+if the order has been executed.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>type</code>
 <dd>
-<p>specify if it&#39;s an sell or buy order (e.g. <code>:buy</code> or <code>:sell</code>)</p>
+<p>specify if it&#39;s an sell or buy order (e.g. <code>:buy</code> or
+<code>:sell</code>)</p>
 </dd><dt><code>limit</code>
 <dd>
 <p>limit price</p>
@@ -486,7 +498,8 @@
 <p><strong>Returns:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>transactions</code>
 <dd>
-<p>array of transaction IDs; usually, exactly one transaction ID is contained in the array</p>
+<p>array of transaction IDs; usually, exactly one transaction ID is contained
+in the array</p>
 </dd></dl>
           
           
@@ -550,12 +563,15 @@
 
         <div class="method-description">
           
-          <p>Places a market order. Check with <a href="ExchangeKraken.html#method-i-get_order_status"><code>get_order_status</code></a> if the order has been executed.</p>
+          <p>Places a market order. Check with <a
+href="ExchangeKraken.html#method-i-get_order_status">#get_order_status</a>
+if the order has been executed.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>type</code>
 <dd>
-<p>specify if it&#39;s an sell or buy order (e.g. <code>:buy</code> or <code>:sell</code>)</p>
+<p>specify if it&#39;s an sell or buy order (e.g. <code>:buy</code> or
+<code>:sell</code>)</p>
 </dd><dt><code>volume</code>
 <dd>
 <p>order volume in base currency</p>
@@ -567,7 +583,8 @@
 <p><strong>Returns:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>transactions</code>
 <dd>
-<p>array of transaction IDs; usually, exactly one transaction ID is contained in the array</p>
+<p>array of transaction IDs; usually, exactly one transaction ID is contained
+in the array</p>
 </dd></dl>
           
           
@@ -632,7 +649,12 @@
 
         <div class="method-description">
           
-          <p>Starts the data collection thread which polls the orderbook from the <a href="https://www.kraken.com">Kraken Exchange</a> every @<code>update_interval</code> seconds, and stores it in an internal database. It also starts the database maintenance thread, which deletes orderbooks older than @<code>database_max_age</code> seconds from the internal database.</p>
+          <p>Starts the data collection thread which polls the orderbook from the <a
+href="https://www.kraken.com">Kraken Exchange</a> every
+@<code>update_interval</code> seconds, and stores it in an internal
+database. It also starts the database maintenance thread, which deletes
+orderbooks older than @<code>database_max_age</code> seconds from the
+internal database.</p>
           
           
 
@@ -747,7 +769,8 @@
 
         <div class="method-description">
           
-          <p>Stops the data collection and database maintenance threads and blocks until they are finished.</p>
+          <p>Stops the data collection and database maintenance threads and blocks until
+they are finished.</p>
           
           
 
@@ -773,13 +796,12 @@
     </section>
   
   </section>
-
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

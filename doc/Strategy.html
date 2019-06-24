@@ -19,7 +19,6 @@
 
 
 
-
 <body id="top" role="document" class="class">
 <nav role="navigation">
   <div id="project-navigation">
@@ -103,22 +102,34 @@
 
 <p>ScroogeMcDuck strategy:</p>
 
-<p>place a <strong>buy</strong> order with @<code>investment</code> units of the base currency if <strong>all</strong> of these requirements are fulfilled (i.e. open a long-position):</p>
+<p>place a <strong>buy</strong> order with @<code>investment</code> units of
+the base currency if <strong>all</strong> of these requirements are
+fulfilled (i.e. open a long-position):</p>
 <ul><li>
-<p>the historical maximum buy-price in the last @<code>max_window</code> seconds is higher then the current price * @<code>max_level</code> </p>
+<p>the historical maximum buy-price in the last @<code>max_window</code>
+seconds is higher then the current price * @<code>max_level</code></p>
 </li><li>
-<p>we fit a simple linear regression model to the buy-prices of the last @<code>slope_window</code> seconds; the end-point (i.e. current time) of the fitted line must be more than @<code>slope_delta</code> higher than the starting point of the fitted line (i.e. current time - @<code>slope_window</code> seconds)</p>
+<p>we fit a simple linear regression model to the buy-prices of the last
+@<code>slope_window</code> seconds; the end-point (i.e. current time) of
+the fitted line must be more than @<code>slope_delta</code> higher than the
+starting point of the fitted line (i.e. current time -
+@<code>slope_window</code> seconds)</p>
 </li><li>
-<p>no buy order was placed in the last @<code>open_position_refractory_time</code> seconds</p>
+<p>no buy order was placed in the last
+@<code>open_position_refractory_time</code> seconds</p>
 </li></ul>
 
-<p>place a <strong>sell</strong> order with @<code>investment</code> units of the base currency if <strong>any</strong> of these requirements are fulfilled (i.e. close a long-position):</p>
+<p>place a <strong>sell</strong> order with @<code>investment</code> units of
+the base currency if <strong>any</strong> of these requirements are
+fulfilled (i.e. close a long-position):</p>
 <ul><li>
-<p>the current sell-price is higher than the original buy-price * @<code>sell_level</code></p>
+<p>the current sell-price is higher than the original buy-price *
+@<code>sell_level</code></p>
 </li><li>
 <p>we placed the buy order more than @<code>sell_window</code> seconds ago</p>
 </li><li>
-<p>the current sell-price dropped below the original buy-price * @<code>stop_loss_level</code> (i.e. stop-loss order)</p>
+<p>the current sell-price dropped below the original buy-price *
+@<code>stop_loss_level</code> (i.e. stop-loss order)</p>
 </li></ul>
 
   </section>
@@ -158,10 +169,10 @@
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>timer</code>
 <dd>
-<p><a href="Timer.html"><code>Timer</code></a> instance</p>
+<p><a href="Timer.html">Timer</a> instance</p>
 </dd><dt><code>exchange</code>
 <dd>
-<p><a href="Exchange.html"><code>Exchange</code></a> instance</p>
+<p><a href="Exchange.html">Exchange</a> instance</p>
 </dd></dl>
           
           
@@ -323,24 +334,29 @@
 
         <div class="method-description">
           
-          <p>This method returns performance statistics and the number of errors of closed positions.</p>
+          <p>This method returns performance statistics and the number of errors of
+closed positions.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>from_position_id</code>
 <dd>
-<p>calculate statistics and errors only on positions newer than this position ID</p>
+<p>calculate statistics and errors only on positions newer than this position
+ID</p>
 </dd></dl>
 
 <p><strong>Returns:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>statistics</code>
 <dd>
-<p>returns an array with closed positions; each array item is another array with the following items: position open time, position close time, invested volume (quote currency), returned volume (quote currency)</p>
+<p>returns an array with closed positions; each array item is another array
+with the following items: position open time, position close time, invested
+volume (quote currency), returned volume (quote currency)</p>
 </dd><dt><code>errors</code>
 <dd>
 <p>number of occurred errors (e.g. due to order timeouts)</p>
 </dd><dt><code>last_position_id</code>
 <dd>
-<p>the ID of the newest position, use this ID for the next call of <a href="Strategy.html#method-i-get_statistics"><code>get_statistics</code></a></p>
+<p>the ID of the newest position, use this ID for the next call of <a
+href="Strategy.html#method-i-get_statistics">#get_statistics</a></p>
 </dd></dl>
           
           
@@ -399,7 +415,10 @@
 
         <div class="method-description">
           
-          <p>This is the main method of the trading strategy class. It is called from the <a href="Timer.html"><code>Timer</code></a> instance with a certain frequency. Use this method to obtain the current and past prices from the <a href="Exchange.html"><code>Exchange</code></a> instance and place buy and sell orders.</p>
+          <p>This is the main method of the trading strategy class. It is called from
+the <a href="Timer.html">Timer</a> instance with a certain frequency. Use
+this method to obtain the current and past prices from the <a
+href="Exchange.html">Exchange</a> instance and place buy and sell orders.</p>
 
 <p><strong>Params:</strong></p>
 <dl class="rdoc-list note-list"><dt><code>time</code>
@@ -741,13 +760,12 @@
     </section>
   
   </section>
-
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.0.1.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
